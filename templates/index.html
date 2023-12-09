@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Fortune of the Day</title>
+</head>
+<body>
+    <div class="main-container">
+      <h1>Fortune of the Day</h1>
+        <div class="fortune-container">
+          
+          <form id="AddFortuneForm">
+            <label for="addfortune">Please write the fortune here:</label><br>
+            <input type="text" id="addfortune" name="addfortune"><br>
+            <label for="addorigin">Please write the origin here:</label><br>
+            <input type="text" id="addorigin" name="addorigin"><br>
+            <button name="addfortunebutton" type="submit" onclick="AddFortune()">Add The Fortune!</button>
+          </form>
+          
+            <button name="scanfortunebutton" type="submit" onclick="ScanFortune()">Scan The Fortune!</button>
+            <p id="ScanFortuneOutput"></p>
+          
+            <label for="readfortune">Please choose which fortune you would like to read.</label><br>
+            <input type="text" id="readfortune" name="readfortune"><br>
+            <label for="readorigin">Please choose which fortune you would like to read.</label><br>
+            <input type="text" id="readorigin" name="readorigin"><br>
+            <button name="readfortunebutton" type="submit" onclick="ReadFortune()">Read The Fortune!</button>
+            <p id="ReadFortuneOutput"></p>
+        
+          <form id="UpdateFortuneForm">
+
+            <label for="updatefortune">Choose the name of the fortune that you would like to update.</label><br>
+            <input type="text" id="updatefortune" name="updatefortune"><br>
+            <label for="updateorigin">Choose the origin of the fortune that you would like to update.</label><br>
+            <input type="text" id="updateorigin" name="updateorigin"><br>
+
+            <label for="updateattribute1">Define who the author of the fortune is.</label><br>
+            <input type="text" id="updateattribute1" name="updateattribute1"><br>
+            <label for="updateattribute2">Define what color the fortune should be.</label><br>
+            <input type="text" id="updateattribute2" name="updateattribute2"><br>
+
+            <button name="updatefortunebutton" type="submit" onclick="UpdateFortune()">Update The Fortune!</button>
+            <p></p>
+          </form>
+
+          <form id="DeleteFortuneForm">
+
+            <label for="deletefortune">Choose the name of the fortune that you would like to delete.</label><br>
+            <input type="text" id="deletefortune" name="deletefortune"><br>
+            <label for="deleteorigin">Choose the origin of the fortune that you would like to delete.</label><br>
+            <input type="text" id="deleteorigin" name="deleteorigin"><br>
+
+            <button name="deletefortunebutton" type="submit" onclick="DeleteFortune()">Delete The Fortune!</button>
+            <p></p>
+          </form>
+
+        </div>
+        <div class="summary-container">
+            <div class="bordered summary-box">
+
+                <p class="summary-text">This is a basic python flask web application for the fortunes.</p>
+
+                <a href="https://s3.eu-central-1.amazonaws.com/www.outworldindustries.com/testpage.html">Click here to check out a test site!</a>
+                <br></br>
+                <a href="https://s3.eu-central-1.amazonaws.com/www.outworldindustries.com/Snr_Linux_Systems_Admin.docx">Click here to check out a Linux position!</a>
+                <br></br>
+                <img src="https://s3.eu-central-1.amazonaws.com/www.outworldindustries.com/29-lex-jurassic-park_1.jpg"></img>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
