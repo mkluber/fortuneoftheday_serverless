@@ -1,10 +1,11 @@
-import boto3
 import json
+import boto3
 
-dynamodb = boto3.resource('dynamodb')
+
+dynamodb = boto3.resource('dynamodb', region_name='eu-central-1')
 table = dynamodb.Table('Fortunes')
 
-def handler(event, context):
+def lambda_handler(event, context):
     body = None
     status_code = 200
     headers = {
@@ -16,6 +17,6 @@ def handler(event, context):
 
     return {
         'statusCode': status_code,
-        'body': body,
+        'body': json.dumps(body),
         'headers': headers
     }

@@ -5,7 +5,7 @@ import boto3
 dynamodb = boto3.resource('dynamodb')
 table = dynamodb.Table('http-crud-tutorial-items')
 
-def handler(event, context):
+def lambda_handler(event, context):
     body = None
     status_code = 200
     headers = {
