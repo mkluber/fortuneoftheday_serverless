@@ -23,15 +23,13 @@ def lambda_handler(event, context):
             'FortuneName': fortune_key,
             'FortuneOrigin': origin_key
         },
-        AttributeUpdates={
-            'FortuneAuthor': {
-                'Value'  : author,
-                'Action' : 'PUT' # available options -> DELETE(delete), PUT(set), ADD(increment)
-            },
-            'FortuneColor': {
-                'Value'  : color,
-                'Action' : 'PUT' # available options -> DELETE(delete), PUT(set), ADD(increment)
-            }
+        UpdateExpression='SET FortuneAuthor = :val1',
+        ExpressionAttributeValues={
+        ':val1': author
+        },
+        UpdateExpression='SET FortuneColor = :val1',
+        ExpressionAttributeValues={
+        ':val1': color
         }
     )
 
