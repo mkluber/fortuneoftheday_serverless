@@ -172,7 +172,7 @@ function UpdateFortune() {
     //Set the fetch options (headers, body)
     let fetchOptions = {
       //HTTP method set to POST.
-      method: "PUT",
+      method: "POST",
       //Set the headers that specify you're sending a JSON body request and accepting JSON response
       headers: {
         "Content-Type": "application/json",
