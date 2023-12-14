@@ -13,7 +13,7 @@ def lambda_handler(event, context):
         "Content-Type": "application/json",
     }
 
-    body_content = event['body']
+    body_content = json.loads(event['body'])
     fortune_key = body_content['updatefortune']
     origin_key = body_content['updateorigin']
     author = body_content['updateattribute1']
