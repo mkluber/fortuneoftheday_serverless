@@ -17,7 +17,7 @@ def lambda_handler(event, context):
     fortune_key = body_content['addfortune']
     origin_key = body_content['addorigin']
     response = table.put_item(
-        Key={
+        Item={
             'FortuneName': fortune_key,
             'FortuneOrigin': origin_key
         }
