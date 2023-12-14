@@ -6,16 +6,18 @@ dynamodb = boto3.resource('dynamodb', region_name='eu-central-1')
 table = dynamodb.Table('Fortunes')
 
 def lambda_handler(event, context):
+    print(json.dumps(event))
     body = None
     status_code = 200
     headers = {
         "Content-Type": "application/json",
     }
 
-    fortune_key = event['updatefortune']
-    origin_key = event['updateorigin']
-    author = event['updateattribute1']
-    color = event['updateattribute2']
+    body_content = json.loads(event['body'])
+    fortune_key = body_content['updatefortune']
+    origin_key = body_content['updateorigin']
+    author = body_content['updateattribute1']
+    color = body_content['updateattribute2']
     response = table.update_item(
         Key={
             'FortuneName': fortune_key,
@@ -36,7 +38,7 @@ def lambda_handler(event, context):
     return {
         'statusCode': status_code,
         'body': json.dumps(body),
+        'response': json.dumps(response),
         'headers': headers,
         'event': json.dumps(event)
     }
-
