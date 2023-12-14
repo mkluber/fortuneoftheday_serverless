@@ -14,8 +14,8 @@ def lambda_handler(event, context):
     }
 
     body_content = json.loads(event['body'])
-    fortune_key = body_content['addfortune']
-    origin_key = body_content['addorigin']
+    fortune_key = body_content['createfortune']
+    origin_key = body_content['createorigin']
     response = table.put_item(
         Item={
             'FortuneName': fortune_key,

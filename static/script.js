@@ -14,11 +14,11 @@ function ScanFortune() {
 }
 
 
-function AddFortune() {
+function CreateFortune() {
 
 
   //Get the form element by id
-  const sampleForm = document.getElementById("AddFortuneForm");
+  const sampleForm = document.getElementById("CreateFortuneForm");
 
   //Add an event listener to the form element and handler for the submit an event.
   sampleForm.addEventListener("submit", async (e) => {
@@ -36,7 +36,7 @@ function AddFortune() {
     /**
      * Take the URL from the form's `action` attribute.
      */
-    let url = 'https://api.outworldindustries.com/addfortune';
+    let url = 'https://api.outworldindustries.com/createfortune';
 
     try {
       /**

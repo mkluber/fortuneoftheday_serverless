@@ -34,10 +34,10 @@ class ReadFortune(Resource):
         item = response['Item']
         return jsonify(item)
 
-class AddFortune(Resource):
+class CreateFortune(Resource):
     def post(self):
-        fortune = request.form['addfortune']
-        origin = request.form['addorigin']
+        fortune = request.form['createfortune']
+        origin = request.form['createorigin']
         table.put_item(
             Item={
             'FortuneName': fortune,
@@ -82,7 +82,7 @@ class DeleteFortune(Resource):
 api.add_resource(HelloWorld, '/')
 api.add_resource(ScanFortune, '/scanfortune')
 api.add_resource(ReadFortune, '/readfortune')
-api.add_resource(AddFortune, '/addfortune')
+api.add_resource(CreateFortune, '/createfortune')
 api.add_resource(UpdateFortune, '/updatefortune')
 api.add_resource(DeleteFortune, '/deletefortune')
 
