@@ -77,7 +77,7 @@ function AddFortune() {
       //Set the headers that specify you're sending a JSON body request and accepting JSON response
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
+        "Accept": "application/json",
       },
       // POST request body as JSON string.
       body: formDataJsonString,
@@ -258,7 +258,7 @@ function DeleteFortune() {
       //Set the headers that specify you're sending a JSON body request and accepting JSON response
       headers: {
         "Content-Type": "application/json",
-        Accept: "application/json",
+        "Accept": "application/json",
       },
       // POST request body as JSON string.
       body: formDataJsonString,
