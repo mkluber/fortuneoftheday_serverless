@@ -12,9 +12,16 @@ def lambda_handler(event, context):
     headers = {
         "Content-Type": "application/json",
     }
-    
-    response = table.scan()
-    body = response['Items']
+
+    body_content = json.loads(event['body'])
+    fortune_key = body_content['deletefortune']
+    origin_key = body_content['deleteorigin']
+    response = table.delete_item(
+        Item={
+            'FortuneName': fortune_key,
+            'FortuneOrigin': origin_key
+        }
+    )
 
     return {
         'statusCode': status_code,
@@ -23,3 +30,4 @@ def lambda_handler(event, context):
         'headers': headers,
         'event': json.dumps(event)
     }
+

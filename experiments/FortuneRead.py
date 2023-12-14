@@ -6,6 +6,7 @@ dynamodb = boto3.resource('dynamodb', region_name='eu-central-1')
 table = dynamodb.Table('Fortunes')
 
 def lambda_handler(event, context):
+    print(json.dumps(event))
     body = None
     status_code = 200
     headers = {
@@ -16,7 +17,7 @@ def lambda_handler(event, context):
     fortune_key = query_string_parameters['readfortune']
     origin_key = query_string_parameters['readorigin']
     response = table.get_item(
-        Key={
+        Item={
             'FortuneName': fortune_key,
             'FortuneOrigin': origin_key
         }
@@ -26,6 +27,8 @@ def lambda_handler(event, context):
     return {
         'statusCode': status_code,
         'body': json.dumps(body),
-        'headers': headers
+        'response': json.dumps(response),
+        'headers': headers,
+        'event': json.dumps(event)
     }
 
