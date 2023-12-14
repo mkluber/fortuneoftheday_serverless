@@ -17,7 +17,7 @@ def lambda_handler(event, context):
     fortune_key = query_string_parameters['readfortune']
     origin_key = query_string_parameters['readorigin']
     response = table.get_item(
-        Item={
+        Key={
             'FortuneName': fortune_key,
             'FortuneOrigin': origin_key
         }

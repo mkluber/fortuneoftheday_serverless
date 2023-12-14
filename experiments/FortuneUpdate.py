@@ -19,7 +19,7 @@ def lambda_handler(event, context):
     author = body_content['updateattribute1']
     color = body_content['updateattribute2']
     response = table.update_item(
-        Item={
+        Key={
             'FortuneName': fortune_key,
             'FortuneOrigin': origin_key
         },
